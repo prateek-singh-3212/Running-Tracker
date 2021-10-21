@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "4fd29a32deff96de3345a8d50e1bfeb2",
+    "entities": [
+      {
+        "tableName": "running_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`previewImage` BLOB, `timeStamp` INTEGER NOT NULL, `avgSpeedKMH` REAL NOT NULL, `distanceM` REAL NOT NULL, `totalTimeMilli` INTEGER NOT NULL, `caloriesBurned` REAL NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "fields": [
+          {
+            "fieldPath": "previewImage",
+            "columnName": "previewImage",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeStamp",
+            "columnName": "timeStamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avgSpeedKMH",
+            "columnName": "avgSpeedKMH",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distanceM",
+            "columnName": "distanceM",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalTimeMilli",
+            "columnName": "totalTimeMilli",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "caloriesBurned",
+            "columnName": "caloriesBurned",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4fd29a32deff96de3345a8d50e1bfeb2')"
+    ]
+  }
+}
